@@ -4,35 +4,39 @@ Arduino arduino;
 
 public void setup() {
   size(500, 500);
-  arduino = new Arduino(this, Arduino.list()[0], 57600); //change the [0] to a [1] or [2] etc. if your program doesn't work
+  arduino = new Arduino(this, Arduino.list()[0], 57600); 
+  //change the [0] to a [1] or [2] etc. if your program doesn't work
+  background(0);
 }
 
 public void draw() {
-  background(192);
   int y = arduino.analogRead(5);
   System.out.println(y);
+  fill(0,0,0,10);
+  rect(0,0,500,500);
+  fill(255);
   ellipse(250, 2*y, 50, 50);
-  fill(100,100,100);
-fill(105,105,105);
-triangle(200,480,300,480,250,250);
+fill(105);
+triangle(210,485,290,485,250,250);
+fill(175,5,5);
+triangle(220,250,178,500,185,500);
+triangle(280,250,322,500,315,500);
+fill(100);
 ellipse(250,250,200,300);
 fill(230,200,200);
 ellipse(250,270,200,170);
-fill(170,170,170);
+fill(170);
 ellipse(250,330,200,200);
-fill(180,180,180);
+fill(180);
 ellipse(170,300,80,180);
-fill(180,180,180);
 ellipse(330,300,80,180);
-fill(255,255,255);
+fill(255);
 ellipse(215,150,30,35);
-fill(255,255,255);
 ellipse(285,150,30,35);
-fill(0,0,0);
+fill(0);
 ellipse(285,150,20,20);
-fill(0,0,0);
 ellipse(215,150,20,20);
-fill(50,50,50);
+fill(50);
 triangle(245,150,255,150,250,170);
 fill(255,255,0);
 triangle(245,150,255,150,250,165);
