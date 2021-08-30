@@ -1,21 +1,9 @@
-import processing.serial.*;
-import cc.arduino.*;
-Arduino arduino;
-
 public void setup() {
   size(500, 500);
-  arduino = new Arduino(this, Arduino.list()[0], 57600); 
-  //change the [0] to a [1] or [2] etc. if your program doesn't work
   background(0);
 }
 
 public void draw() {
-  int y = arduino.analogRead(5);
-  System.out.println(y);
-  fill(0,0,0,10);
-  rect(0,0,500,500);
-  fill(255);
-  ellipse(250, 2*y, 50, 50);
 fill(160,42,42);
 triangle(0,490,0,495,1000,485);
 fill(105);
