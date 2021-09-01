@@ -9,35 +9,37 @@ public void setup() {
 }
 
 public void draw() {
-  int y = arduino.analogRead(7);
+  int y = arduino.analogRead(4)/20;
+  int x = arduino.analogRead(5)/10;
+  System.out.println(x);
   System.out.println(y);
-  if((y/20)>30)
-  y=30;
-  background(50);
-fill(160,42,42);
+  if(x>=105)
+  x=105;
+  background(2*x+45);
+fill(x+160,x+42,x+42);
 triangle(0,490,0,495,1000,485);
-fill(105);
-triangle(210-(y/20),485,290+(y/20),485,250,250-(y/20));
-fill(255,5,5);
+fill(x+105);
+triangle(210-(y),485,290+(y),485,250,250-(y));
+fill(x+205,x+5,x+5);
 triangle(220,250,178,490,185,490);
 triangle(280,250,322,490,315,490);
-fill(100);
-ellipse(250,250,200+(y/20),300);
-fill(230,200,200);
-ellipse(250,270-(y/20),200,170);
-fill(170);
-ellipse(250,330-(y/20),200+(y/20),200+(y/20));
-fill(180);
-ellipse(170-(y/20),300+(y/20),80,180+(y/20));
-ellipse(330+(y/20),300+(y/20),80,180+(y/20));
-fill(255);
+fill(x+100);
+ellipse(250,250,200+(y),300);
+fill(x+230,x+200,x+200);
+ellipse(250,270-(y),200,170);
+fill(x+150);
+ellipse(250,330-(y),200+(y),200+(y));
+fill(x+150);
+ellipse(170-(y),300+(y),80,180+(y));
+ellipse(330+(y),300+(y),80,180+(y));
+fill(225);
 ellipse(215,150,30,35);
 ellipse(285,150,30,35);
-fill(0);
+fill(x+0);
 ellipse(285,150,20,20);
 ellipse(215,150,20,20);
-fill(50);
+fill(x+50);
 triangle(245,150,255,150,250,170);
-fill(255,255,0);
+fill(x+205,x+205,x+0);
 triangle(245,150,255,150,250,165);
 }
